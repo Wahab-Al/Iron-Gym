@@ -1,0 +1,665 @@
+:root {
+    --main-color: #000000;
+    --secondary-color: #b30127;
+    --third-color: #587bdd;
+    --forth-color: #F5F5F5;
+    font-family: "Righteous", sans-serif;
+    font-style: normal;
+    --fifth-color: #d2d696e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    /* scrollbar-width: none; */
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* ============ header section ============ */
+
+header {
+    width: 100%;
+    height: 10%;
+}
+
+.header-container {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* ============ top-header ============ */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.3px rgba(105, 105, 105, 0.524) solid;
+    padding: 2.6px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.left-header-list,
+.right-header-list {
+    color: dimgray;
+    font-weight: 100;
+    font-size: small;
+}
+
+.social {
+    color: var(--main-color);
+
+}
+
+.social:hover {
+    transform: rotateY(180deg);
+    color: #b30127;
+    cursor: pointer;
+}
+
+.left-header-list,
+.right-header-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.left-header-list {
+    margin-left: 70px;
+}
+
+.right-header-list {
+    margin-right: 70px;
+}
+
+.left-header-list>li::before,
+.right-header-list>li::before {
+    content: "";
+    width: 2px;
+    height: 13px;
+    background-color: #b30127;
+    display: inline-block;
+    margin-right: 3px;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-header-list:hover,
+.right-header-list:hover {
+    cursor: pointer;
+}
+
+.left-header-list li:hover::before,
+.right-header-list li:hover::before {
+    transform: scaleY(1);
+}
+
+.left-header-list>li::after,
+.right-header-list>li::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 13px;
+    background-color: #b30127;
+    margin-left: 3px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-header-list li:hover::after,
+.right-header-list li:hover::after {
+    transform: scaleY(1);
+}
+
+/* ============ top-header ============ */
+
+
+
+/* ============ nav ============ */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.logo-partition {
+    display: flex;
+    gap: 10px;
+}
+
+.logo-partition i {
+    color: #bb0327;
+}
+
+.logo-partition h3 span {
+    color: dimgray;
+}
+
+.logo-partition h3 {
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+.nav-list>ul,
+.right-nav-list-icons>ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    cursor: pointer;
+}
+
+/* ========== To repeat and To Learn ========== */
+.nav-list>ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    cursor: pointer;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list>ul>li {
+    position: relative;
+}
+
+.nav-list>ul>li>a.main-nav-list {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: small;
+}
+
+/* Apply pseudo-elements ONLY to top-level nav li */
+.nav-list>ul>li>a.main-nav-list::before,
+.nav-list>ul>li>a.main-nav-list::after,
+.nav-list>ul>li::before,
+.nav-list>ul>li::after {
+
+    content: "";
+    position: absolute;
+    background-color: #b30127;
+    transition: transform 0.5s ease-in-out;
+    z-index: 1;
+}
+
+/* Vertical lines - left and right */
+.nav-list li::before {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.nav-list li::after {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    /* or bottom */
+}
+
+/* Horizontal lines - top and bottom */
+.nav-list li a.main-nav-list::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.nav-list li a.main-nav-list::after {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    /* or right*/
+}
+
+/* On hover: animate all lines */
+.nav-list li:hover::before,
+.nav-list li:hover::after {
+    transform: scaleY(1);
+}
+
+.nav-list li:hover a.main-nav-list::before,
+.nav-list li:hover a.main-nav-list::after {
+    transform: scaleX(1);
+}
+
+/* ========== To repeat and To Learn ========== */
+
+
+/* ========== dropdown list of Services in nav ========== */
+
+div.dropdown-list {
+    /* display: none; */
+    visibility: hidden;
+    position: absolute;
+    top: 38px;
+    left: -40px;
+    width: 0px;
+    height: 0px;
+    background-color: var(--forth-color);
+    z-index: 2;
+    border: .4px solid #c7c7c7;
+    border-radius: 12px;
+    font-size: small;
+}
+
+.dropdown:hover div.dropdown-list {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: transform 1s ease-in-out;
+    position: absolute;
+    width: 250px;
+    height: auto;
+
+    animation-name: dropdown;
+    animation-duration: 1.7s;
+}
+
+@keyframes dropdown {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        width: 250px;
+        height: auto;
+        transition: transform 1s ease-in-out;
+        transform: scaleZ(1);
+    }
+}
+
+.dropdown-list {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.dropdown-list>ul {
+    margin: 15px;
+}
+
+.dropdown-list>ul>li {
+    padding: 5px 0;
+}
+
+.dropdown-list>ul>li>div.line1 {
+    width: 50px;
+}
+
+.dropdown-list>ul>li>div.line2 {
+    width: 63px;
+}
+
+.dropdown-list>ul>li>div.line1,
+.dropdown-list>ul>li>div.line2 {
+    height: .5px;
+    background-color: gray;
+    margin-top: 4px;
+}
+
+.dropdown-list>ul>li:hover {
+    color: #b30127;
+    transform: scale(1.2);
+}
+
+.dropdown-list>ul :first-child {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    color: gray;
+}
+
+/* ========== dropdown list of Services in nav ========== */
+
+
+.main-logo-icons {
+    font-size: x-large;
+}
+
+.right-nav-list-icons li {
+    position: relative;
+}
+
+.item-count-cart {
+    position: absolute;
+    background-color: #b30127;
+    color: #ffffff;
+    width: 90%;
+    height: 90%;
+    transform: translate(2px, -32px);
+    border-radius: 50%;
+    text-align: center;
+    font-size: medium;
+}
+
+.right-nav-list-icons ul li:hover {
+    color: #bb0327;
+    cursor: pointer;
+}
+
+.cart:hover .item-count-cart {
+    cursor: pointer;
+    transform: translate(2px, -36px);
+}
+
+/* ============ nav ============ */
+
+
+/* ============ bottom-header banner ============ */
+
+.bottom-header {
+    background-color: var(--forth-color);
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    font-size: small;
+    word-spacing: 2px;
+}
+
+.bottom-header p a {
+    text-decoration: underline;
+    color: #bb0327;
+}
+
+.bottom-header p a:hover {
+    letter-spacing: 1px;
+    transition: .5s;
+}
+
+/* ============ bottom-header banner ============ */
+/* ============ header section ============ */
+
+
+
+/* ============ main section ============ */
+
+main {
+    width: 100%;
+    height: 91%;
+    position: relative;
+    background-color: #fcf3ef45;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.content {
+    width: 500px;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    left: 170px;
+    transform: translate(40px, 10px);
+}
+
+.content h2 {
+    transform: translate(0, -50px);
+    font-family: "Playwrite US Modern", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #f4202d;
+
+}
+
+.content h1 {
+    transform: translate(0, -20px);
+    font-family: "Righteous", sans-serif;
+    font-weight: 1100;
+    font-style: normal;
+}
+
+.content p {
+    font-family: "Righteous", sans-serif;
+    font-weight: 10;
+    font-size: small;
+    font-style: normal;
+    /* color: dimgray; */
+    opacity: 0.5;
+}
+
+.img-section {
+    width: 45%;
+    height: 100%;
+}
+
+.img-section img {
+    height: 100%;
+    background-size: cover;
+    filter: drop-shadow(-110px -1.9px 4px rgba(128, 128, 128, 0.445));
+}
+
+.content button {
+    padding: 20px 25px;
+    margin: 30px;
+    background-color: var(--secondary-color);
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.content button:hover {
+    background-color: #f0eeee;
+    color: var(--secondary-color);
+    border: .3px solid var(--main-color);
+}
+
+/* ============ main section ============ */
+
+
+
+/* ============ gym areas section ============ */
+
+.gym-areas {
+    background-color: var(--main-color);
+    /* background-color: var(--forth-color); */
+}
+
+.gym-areas-container {
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.room-showcase {
+    width: 550px;
+    height: 400px;
+    background-color: #ffffff;
+    top: 20px;
+    border: 0.2px solid #b3012877;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.room-showcase>img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.room-showcase:hover>img {
+    transform: scale(1.1, 1.1);
+    transition: 1.3s;
+    position: absolute;
+}
+
+.room-showcase:hover>.room-overlay {
+    transform: translate(0, -70px);
+    transition: 1.3s ease-in-out;
+}
+
+.room-showcase:hover>.room-overlay>.gym-areas-Details {
+    display: block;
+    transition: 1.1s ease-in-out;
+}
+
+.room-overlay>.gym-areas-title {
+    color: var(--forth-color);
+    margin-bottom: 30px;
+}
+
+.room-overlay {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: -70px;
+    text-align: center;
+    background: -webkit-linear-gradient(bottom top,
+            #E7E9EB,
+            #CED4DA,
+            #B8BFC5,
+            #A6ACB2,
+            #959BA0,
+            #878B8F,
+            #7A7D81,
+            #6E7173);
+}
+
+.gym-areas-Details {
+    display: none;
+    color: var(--fifth-color);
+    font-weight: 100;
+}
+
+.gym-areas-Details:hover {
+    letter-spacing: 1.2px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.underline-on-gym-details {
+    height: 1px;
+    background-color: var(--fifth-color);
+    margin-top: 4px;
+    margin-left: 38%;
+    margin-right: 38%;
+    letter-spacing: 1.2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+    .img-section img {
+    width: 800px;
+    height: 100%;
+    background-size: contain;
+    filter: drop-shadow(-140px 5px 4px rgba(128, 128, 128, 0.445));
+    transform: translate(-115px, 0);
+}
+
+.nav-list li span::before,
+.nav-list li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #b30127;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.nav-list li span::before {
+    top: -1;
+}
+
+.nav-list li span::after {
+    bottom: 1;
+}
+
+.nav-list li:hover span::before,
+.nav-list li:hover span::after {
+    transform: scaleX(1);
+}
+
+.nav-list li {
+    display: inline-block;
+    padding: 7px 7px;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    transition: border-color .2s ease-in-out;
+}
+
+.nav-list li:hover {
+    color: #b30127;
+    border-top-color: #b30127;
+    border-bottom-color: #b30127;
+    border-left-color: #b30127;
+    border-right-color: #b30127;
+}
+
+*/
