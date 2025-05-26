@@ -1215,6 +1215,7 @@ main {
     /* background-color: var(--main-color); */
     background-image: url(../img/MainPic0.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
     background-color: var(--main-color);
     border-top: 1px solid var(--forth-color);
